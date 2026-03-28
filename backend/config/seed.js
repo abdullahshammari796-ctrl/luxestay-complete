@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 const User = require('../models/User');
 const Room = require('../models/Room');
-require('dotenv').config({ path: '../.env' });
+require('dotenv').config({ path: require('path').join(__dirname, '../.env') });
 
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/luxestay';
+console.log('MONGO_URI from env:', process.env.MONGO_URI);
 
 const rooms = [
   {
